@@ -6,6 +6,12 @@ using Core.Pool;
 public class WarriorHpController : MonoBehaviour
 {
     private float _hp;
+
+    public void InitHpData(float hp)
+    {
+        _hp = hp;
+    }
+
     public void CalculateHpCurrent(float hitDam, float defend)
     {
         _hp -= (hitDam - defend);

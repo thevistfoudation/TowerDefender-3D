@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataWarrior:
   - level: 1
-    speed: 2
+    speed: 3
     hp: 10
     defend: 5
     damge: 5

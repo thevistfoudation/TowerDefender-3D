@@ -4,7 +4,7 @@ namespace DataAccount
 {
     public class WarriorData
     {
-        public int levelWarrior;
+        public int levelWarrior = 1;
 
         public void SetWarriorLevel(int level)
         {

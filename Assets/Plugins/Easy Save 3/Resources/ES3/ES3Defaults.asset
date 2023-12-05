@@ -30,10 +30,10 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Assembly-CSharp-firstpass
-    - Assembly-CSharp
     - ProjectDawn.Navigation.Editor
     - ProjectDawn.Navigation.Hybrid
     - ProjectDawn.Navigation
+    - Assembly-CSharp
     - ProjectDawn.ReciprocalAvoidance
     - ProjectDawn.LocalAvoidance
     - ProjectDawn.Navigation.Hybrid.Editor
