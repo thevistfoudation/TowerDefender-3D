@@ -6,6 +6,12 @@ using UnityEngine;
 public class WarriorAttackController : MonoBehaviour
 {
     [SerializeField] private GameObject _hitBox;
+
+    public void InitTag(string tag)
+    {
+        _hitBox.tag = tag;
+    }
+
     public void Attack()
     {
         _hitBox.SetActive(true);

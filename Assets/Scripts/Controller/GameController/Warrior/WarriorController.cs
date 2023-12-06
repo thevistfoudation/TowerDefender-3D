@@ -11,6 +11,7 @@ public class WarriorController : MonoBehaviour
     [SerializeField] private WarriorHpController _warriorHpController;
     [SerializeField] private WarriorAttackController _warriorAttackController;
 
+    public int id;
     public float damge;
     private DataWariorCollection _dataWariorCollection;
     private float _speed;
@@ -18,6 +19,7 @@ public class WarriorController : MonoBehaviour
     private float _defend;
     private bool _canMove;
     private Transform _target;
+    private bool _isEnemy;
 
     private void Awake()
     {
@@ -25,9 +27,18 @@ public class WarriorController : MonoBehaviour
         
     }
 
-    public void InitData(Transform target)
+    public void InitData(Transform target,string tag, int idRuntime,bool isEnemy)
     {
+        _isEnemy = isEnemy;
+        id = idRuntime;
         _target = target;
+        this.gameObject.transform.tag = tag;
+        _warriorAttackController.InitTag(tag);
+        InitDataWarrior(target);
+    }
+
+    public void SetLocation(Transform target)
+    {
         InitDataWarrior(target);
     }
 
@@ -53,11 +64,11 @@ public class WarriorController : MonoBehaviour
 
     private void Update()
     {
-        if (!_canMove)
-        {
-            _warriorSetDestinationController.StopMoving();
-        }
-        CheckAttack();
+        //if (!_canMove)
+        //{
+        //    _warriorSetDestinationController.StopMoving();
+        //}
+        //CheckAttack();
     }
 
     public void InitDataWarrior(Transform target)
@@ -79,12 +90,23 @@ public class WarriorController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (!other.gameObject.CompareTag(gameObject.transform.tag))
+        if (!collision.gameObject.CompareTag(gameObject.transform.tag) && (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("player")))
         {
-            var hitDamge = other.GetComponent<WarriorController>().damge;
+            if (collision.gameObject.GetComponent<WarriorController>() is null)
+            {
+                return;
+            }
+            var hitDamge = collision.gameObject.GetComponent<WarriorController>().damge;
             _warriorHpController.CalculateHpCurrent(hitDamge, _defend);
+            GameController.Instance.SetTargetEnemy();
         }
     }
-}
+
+    private void OnDisable()
+    {
+        GameController.Instance.RemoveWarrior(_isEnemy, id,this);
+        GameController.Instance.SetTargetEnemy();
+    }
+} 

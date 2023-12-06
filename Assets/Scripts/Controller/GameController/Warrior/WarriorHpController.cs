@@ -5,28 +5,29 @@ using Core.Pool;
 
 public class WarriorHpController : MonoBehaviour
 {
-    private float _hp;
+    public float hp;
 
     public void InitHpData(float hp)
     {
-        _hp = hp;
+        this.hp = hp;
     }
 
     public void CalculateHpCurrent(float hitDam, float defend)
     {
-        _hp -= (hitDam - defend);
+        hp -= (hitDam - defend);
     }
 
     private void Update()
     {
-        if(_hp <= 0)
+        if(hp <= 0)
         {
             SmartPool.Instance.Despawn(this.gameObject);
+
         }
     }
 
     private void OnDisable()
     {
-        _hp = 0;
+        hp = 0;
     }
 }

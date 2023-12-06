@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 642341661941856901}
   - component: {fileID: 7262773376061864930}
   m_Layer: 0
-  m_Name: Warrior
+  m_Name: Warrior 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: edaeedecab4f1364ba7202bafd902369, type: 2}
+  - {fileID: 2100000, guid: d4185afb04ccfa344adcee13fc096810, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -324,6 +324,7 @@ MonoBehaviour:
   _warriorSetDestinationController: {fileID: 7882381117031838167}
   _warriorHpController: {fileID: 642341661941856901}
   _warriorAttackController: {fileID: 1361543679660036486}
+  id: 0
   damge: 0
 --- !u!114 &7882381117031838167
 MonoBehaviour:
