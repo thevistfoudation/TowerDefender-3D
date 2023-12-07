@@ -30,13 +30,28 @@ MonoBehaviour:
     serializationDepthLimit: 64
     assemblyNames:
     - Assembly-CSharp-firstpass
+    - MoreMountains.Feedbacks
+    - MoreMountains.Feedbacks.Editor
+    - MoreMountains.Tools
+    - MoreMountains.Tools.Editor
+    - MoreMountains.Feedbacks.TextMeshPro
     - ProjectDawn.Navigation.Editor
+    - MoreMountains.Feedbacks.HDRP
+    - MoreMountains.Feedbacks.PostProcessing
+    - MoreMountains.Feedbacks.URP
+    - MoreMountains.Feedbacks.MMTools
+    - Lofelt.NiceVibrations
+    - Lofelt.NiceVibrations.Demo
+    - MoreMountains.Feedbacks.Cinemachine
     - ProjectDawn.Navigation.Hybrid
     - ProjectDawn.Navigation
     - Assembly-CSharp
     - ProjectDawn.ReciprocalAvoidance
     - ProjectDawn.LocalAvoidance
     - ProjectDawn.Navigation.Hybrid.Editor
+    - MoreMountains.Feedbacks.NiceVibrations
+    - MoreMountains.Feedbacks.Authorizations
+    - Lofelt.NiceVibrations.Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

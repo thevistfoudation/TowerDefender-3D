@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using DataAccount;
 using UnityEngine.UI;
+using Base.Core;
+using UI.LoadingScene;
 
 public class ModuleUiWin : MonoBehaviour, ModuleUiListener
 {
@@ -18,5 +20,6 @@ public class ModuleUiWin : MonoBehaviour, ModuleUiListener
     public void ButtonListener()
     {
         DataAccountPlayer.PlayerResourceData.LevelUp();
+        GameManager.Instance.LoadScene(SceneName.GamePlayScreen);
     }
 }

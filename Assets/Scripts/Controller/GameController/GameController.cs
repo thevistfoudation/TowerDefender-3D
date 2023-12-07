@@ -14,18 +14,12 @@ public class GameController : SingletonMono<GameController>
 
     private int _count;
 
-
-    private void Start()
+    public void StartGame()
     {
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             CreateEnemyInitClass();
         }
-    }
-
-    private void EventListener()
-    {
-        
     }
 
     public void RemoveWarrior(bool isEnemy,int id, WarriorController WarriorController)

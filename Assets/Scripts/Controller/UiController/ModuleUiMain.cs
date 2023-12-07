@@ -10,6 +10,7 @@ public class ModuleUiMain : MonoBehaviour, ModuleUiListener
     [Header("Header")]
     [SerializeField] private TextMeshProUGUI _goldText;
     [SerializeField] private TextMeshProUGUI _gemText;
+    [SerializeField] private Button _playBtn;
 
     [Header("Warrior")]
     [SerializeField] private Button _createWarriorBtn;
@@ -61,6 +62,8 @@ public class ModuleUiMain : MonoBehaviour, ModuleUiListener
 
         _createWizzardBtn.onClick.AddListener(CreateWizzard);
         _upgradeWizzardBtn.onClick.AddListener(UpgradeWizzard);
+
+        _playBtn.onClick.AddListener(OnClickPlay);
     }
 
     private void CreateWarrior()
@@ -115,6 +118,11 @@ public class ModuleUiMain : MonoBehaviour, ModuleUiListener
             DataAccountPlayer.WarriorData.UpgradeWarriorLevel();
             DataAccountPlayer.PlayerResourceData.ChangeGold(-15);
         }
+    }
+
+    private void OnClickPlay()
+    {
+        GameController.Instance.StartGame();
     }
 
     private void Win()

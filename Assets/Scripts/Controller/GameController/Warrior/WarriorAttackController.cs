@@ -5,16 +5,11 @@ using UnityEngine;
 
 public class WarriorAttackController : MonoBehaviour
 {
-    [SerializeField] private GameObject _hitBox;
+    [SerializeField] private GameObject _bullet;
 
-    public void InitTag(string tag)
+    public void Shoot()
     {
-        _hitBox.tag = tag;
+
     }
 
-    public void Attack()
-    {
-        _hitBox.SetActive(true);
-        DOVirtual.DelayedCall(0.5f, () => _hitBox.SetActive(false));
-    }
 }

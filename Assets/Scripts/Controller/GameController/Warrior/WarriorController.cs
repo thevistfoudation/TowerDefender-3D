@@ -9,7 +9,6 @@ public class WarriorController : MonoBehaviour
 {
     [SerializeField] private WarriorSetDestinationController _warriorSetDestinationController;
     [SerializeField] private WarriorHpController _warriorHpController;
-    [SerializeField] private WarriorAttackController _warriorAttackController;
 
     public int id;
     public float damge;
@@ -34,7 +33,6 @@ public class WarriorController : MonoBehaviour
         id = idRuntime;
         _target = target;
         this.gameObject.transform.tag = tag;
-        _warriorAttackController.InitTag(tag);
         InitDataWarrior(target);
     }
 
@@ -66,20 +64,6 @@ public class WarriorController : MonoBehaviour
     public void InitDataWarrior(Transform target)
     {
         _warriorSetDestinationController.InitData( _speed, target);
-    }
-
-    private void CheckAttack()
-    {
-        var distance = Vector3.Distance(gameObject.transform.position, _target.position);
-        if(distance <= 1)
-        {
-            _warriorAttackController.Attack();
-            _canMove = false;
-        }
-        else
-        {
-            _canMove = true;
-        }
     }
 
     private void OnCollisionEnter(Collision collision)

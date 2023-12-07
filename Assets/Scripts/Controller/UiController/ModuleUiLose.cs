@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using DataAccount;
 using UnityEngine.UI;
+using UI.LoadingScene;
+using Base.Core;
 
 public class ModuleUiLose : MonoBehaviour, ModuleUiListener
 {
@@ -16,6 +18,8 @@ public class ModuleUiLose : MonoBehaviour, ModuleUiListener
 
     public void ButtonListener()
     {
-        
+        GameManager.Instance.LoadScene(SceneName.GamePlayScreen);
     }
+
+
 }
