@@ -324,6 +324,7 @@ MonoBehaviour:
   _warriorSetDestinationController: {fileID: 7882381117031838167}
   _warriorHpController: {fileID: 642341661941856901}
   _warriorAttackController: {fileID: 1361543679660036486}
+  id: 0
   damge: 0
 --- !u!114 &7882381117031838167
 MonoBehaviour:

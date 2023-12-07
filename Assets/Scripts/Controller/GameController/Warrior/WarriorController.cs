@@ -20,11 +20,12 @@ public class WarriorController : MonoBehaviour
     private bool _canMove;
     private Transform _target;
     private bool _isEnemy;
+    private bool _isSendingEvent;
 
     private void Awake()
     {
         InitDataBase();
-        
+        _isSendingEvent = false;
     }
 
     public void InitData(Transform target,string tag, int idRuntime,bool isEnemy)
@@ -62,15 +63,6 @@ public class WarriorController : MonoBehaviour
         _warriorHpController.InitHpData(_hp);
     }
 
-    private void Update()
-    {
-        //if (!_canMove)
-        //{
-        //    _warriorSetDestinationController.StopMoving();
-        //}
-        //CheckAttack();
-    }
-
     public void InitDataWarrior(Transform target)
     {
         _warriorSetDestinationController.InitData( _speed, target);
@@ -101,6 +93,24 @@ public class WarriorController : MonoBehaviour
             var hitDamge = collision.gameObject.GetComponent<WarriorController>().damge;
             _warriorHpController.CalculateHpCurrent(hitDamge, _defend);
             GameController.Instance.SetTargetEnemy();
+        }
+        if (collision.gameObject.CompareTag("enemyGoal") && gameObject.transform.tag == "player")
+        {
+            if (!_isSendingEvent)
+            {
+                Debug.LogError("win this Game");
+                this.PostEvent(EventID.Win);
+                _isSendingEvent = true;
+            }
+        }
+        if (collision.gameObject.CompareTag("playerGoal") && gameObject.transform.tag == "enemy")
+        {
+            if (!_isSendingEvent)
+            {
+                Debug.LogError("lose this Game");
+                this.PostEvent(EventID.Lose);
+                _isSendingEvent = true;
+            }
         }
     }
 

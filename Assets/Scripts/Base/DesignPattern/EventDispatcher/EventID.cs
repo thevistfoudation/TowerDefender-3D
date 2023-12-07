@@ -1,18 +1,12 @@
 public enum EventID
 {
-    EarnGold,
-    EatFood,
-    EnemyDie,
-    PlayerDie,
-    WasEat,
+    Win,
+    Lose,
     LevelUp,
-    EatItem,
-    RespawnEnemy,
-    ShieldHit,
-    EarnMoney,
-    SpendMoney,
-    BlockSide,
-    MovingAgain,
+  
+    ChangeMoneyValue,
+    ChangeGemValue,
+
 
     // Settings
     OnSoundChange,
@@ -20,13 +14,4 @@ public enum EventID
     OnVibrationChange,
 
     //UI
-    DailyCheckInClaimReward,
-    EnemyKill,
-    StatUpgradeSuccess,
-    SkinElementSelect,
-    SkinUsingSelected,
-    SkinUnlockSuccess,
-    SkinRandomSuccess,
-    StatUpgradeSuccessFree,
-    ReviveSuccess,
 }

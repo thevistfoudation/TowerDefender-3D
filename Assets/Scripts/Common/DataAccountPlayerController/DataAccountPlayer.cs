@@ -5,8 +5,24 @@ namespace DataAccount
         private static PlayerSettings _playerSettings;
         private static PlayerTutorialData _playerTutorialData;
         private static WarriorData _warriorData;
+        private static PlayerResourceData _playerResourceData;
 
         #region Getters
+
+        public static PlayerResourceData PlayerResourceData
+        {
+            get
+            {
+                if (_playerResourceData != null)
+                {
+                    return _playerResourceData;
+                }
+
+                var playerResourceData = new PlayerResourceData();
+                _playerResourceData = ES3.Load(DataAccountPlayerConstants.PlayerResourceData, playerResourceData);
+                return _playerResourceData;
+            }
+        }
 
         public static WarriorData WarriorData
         {
@@ -70,6 +86,11 @@ namespace DataAccount
         public static void SavePlayerTutorialData()
         {
             ES3.Save(DataAccountPlayerConstants.PlayerTutorialData, _playerTutorialData);
+        }
+
+        public static void SavePlayerResourceData()
+        {
+            ES3.Save(DataAccountPlayerConstants.PlayerResourceData, _playerResourceData);
         }
 
         #endregion

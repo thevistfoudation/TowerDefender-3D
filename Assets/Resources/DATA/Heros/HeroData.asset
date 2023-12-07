@@ -18,21 +18,25 @@ MonoBehaviour:
     hp: 10
     defend: 2
     damge: 5
+    price: 10
   - level: 2
     speed: 5
     hp: 15
     defend: 3
     damge: 8
+    price: 13
   - level: 3
     speed: 8
     hp: 25
     defend: 4
     damge: 10
+    price: 16
   - level: 4
     speed: 10
     hp: 30
     defend: 5
     damge: 13
+    price: 20
   dataArcher:
   - level: 1
     speed: 2
