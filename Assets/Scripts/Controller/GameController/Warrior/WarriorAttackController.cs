@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class WarriorAttackController : MonoBehaviour
 {
-    [SerializeField] private GameObject _bullet;
+    [SerializeField] private BulletController _bullet;
+    [SerializeField] private GameObject _tranShoot;
 
     public void Shoot()
     {
-
+        CreateController.Instance.Bullet(_tranShoot).InitData(gameObject.transform,this.gameObject.transform.tag,100);
     }
 
 }

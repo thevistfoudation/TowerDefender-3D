@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -926,7 +926,6 @@ GameObject:
   - component: {fileID: 540065254}
   - component: {fileID: 540065256}
   - component: {fileID: 540065255}
-  - component: {fileID: 540065257}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1014,6 +1013,7 @@ MonoBehaviour:
     SerializationNodes: []
   _warrior: {fileID: -8711934357147242642, guid: 373234d3ed82d744b84d8e6e1baa5e5b, type: 3}
   _enemyWarrior: {fileID: -8711934357147242642, guid: ea6e2ef763851ee43805b2dca6de3039, type: 3}
+  _bulletController: {fileID: 0}
 --- !u!114 &540065255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,18 +1047,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
---- !u!114 &540065257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540065250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6dc6bc8e4bb2834e80531c648886d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &551197451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4888,6 +4876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _goldText: {fileID: 1777080767}
   _gemText: {fileID: 1802865237}
+  _playBtn: {fileID: 0}
   _createWarriorBtn: {fileID: 570759323}
   _upgradeWarriorBtn: {fileID: 1199604702}
   _createArcherBtn: {fileID: 1895188572}
